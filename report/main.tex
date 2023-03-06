@@ -1,0 +1,150 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% University/School Laboratory Report
+% LaTeX Template
+% Version 4.0 (March 21, 2022)
+%
+% This template originates from:
+% https://www.LaTeXTemplates.com
+%
+% Authors:
+% Vel (vel@latextemplates.com)
+% Linux and Unix Users Group at Virginia Tech Wiki
+%
+% License:
+% CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+    letterpaper, % Paper size, specify a4paper (A4) or letterpaper (US letter)
+    10pt, % Default font size, specify 10pt, 11pt or 12pt
+]{CSUniSchoolLabReport}
+
+\usepackage[french]{babel}
+\usepackage{indentfirst}
+\usepackage[pdftex]{hyperref}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+\usepackage{lipsum}
+\usepackage{xcolor}
+\colorlet{LightGray}{white!95!black}
+\usepackage{minted}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\newcommand{\fig}[1]{\cref{fig:#1}}
+\newcommand{\code}[1]{\cref{code:#1}}
+\usepackage[justification=centering]{caption}
+
+
+% Displays a syntax-highlighted code block from a file with caption, that gets
+% labelled with its path
+% #1 : File with code
+% #2 : Language
+% #3 : Caption
+\newcommand{\Codeblock}[3]{
+    \begin{figure}[h]
+        \centering
+        \inputminted
+        [
+            linenos,
+            frame=lines,
+            framesep=2mm,
+            breaklines,
+            fontsize=\footnotesize,
+            bgcolor=LightGray,
+            baselinestretch=1
+        ]{#2}{#1}
+
+        \captionsetup{singlelinecheck=off}
+        \caption{#3}
+        \label{code:#1}
+    \end{figure}
+}
+
+%----------------------------------------------------------------------------------------
+%	REPORT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Systèmes Temps Réel\\Travaux pratiques} % Report title
+
+\author{Robin \textsc{SHAMSNEJAD}} % Author name(s), add additional authors like: '\& James \textsc{Smith}'
+
+\date{\today} % Date of the report
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+
+\section*{Objectif}
+
+Le but de ce TP est de prendre en main la bibliothèque C++ \textsc{SystemC} afin
+de décrire des systèmes temps réel.
+
+\tableofcontents
+
+%----------------------------------------------------------------------------------------
+
+\pagebreak
+\section{TP1 Partie A - Analyse d'un exemple}
+
+\subsection{Question A.1}
+
+Après compilation immédiate des fichiers fournis, on obtient le résultat visible
+en \code{code/qA1.txt}.
+
+% #1 : File with code
+% #2 : Language
+% #3 : Caption
+% #4 : Longer description
+% #5 : Source
+\Codeblock{code/qA1.txt}{bash}{Résultat de la compilation brute}
+% \begin{figure}[h!]
+%     \centering
+%     \begin{minted}
+%     [
+%         linenos,
+%         frame=lines,
+%         framesep=2mm,
+%         breaklines,
+%         fontsize=\footnotesize,
+%         bgcolor=LightGray,
+%         baselinestretch=1
+%     ]{bash}
+% $ make
+% g++ -O3 -Wall -I. -I.. -I/usr/lib/include -c simple_fifo.cpp
+% g++ -O3 -Wall -I. -I.. -I/usr/lib/include -L. -L.. -L/usr/lib/lib-linux64 -o run.x simple_fifo.o -lsystemc -lm  2>&1 | c++filt
+% $ ./run.x
+
+%         SystemC 2.3.4-Accellera --- Mar  6 2023 09:32:15
+%         Copyright (c) 1996-2022 by all Contributors,
+%         ALL RIGHTS RESERVED
+
+
+% V<9>isit www.<0>s<9>ystemc.or<0>g<9> and see <0>w<9>hat Syste<0>m<9>C can do <0>f<9>or you to<0>day!
+% <0>
+%     \end{minted}
+%     \caption{Résultat de la compilation brute}
+%     \label{code:compil1}
+% \end{figure}
+
+%----------------------------------------------------------------------------------------
+
+\pagebreak
+\section{TP1 Partie B - Modélisation d'un système simple}
+
+\lipsum[1-3]
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

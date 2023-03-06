@@ -1,0 +1,11 @@
+$ make
+g++ -O3 -Wall -I. -I.. -I/usr/lib/include -c simple_fifo.cpp
+g++ -O3 -Wall -I. -I.. -I/usr/lib/include -L. -L.. -L/usr/lib/lib-linux64 -o run.x simple_fifo.o -lsystemc -lm  2>&1 | c++filt
+$ ./run.x
+
+        SystemC 2.3.4-Accellera --- Mar  6 2023 09:32:15
+        Copyright (c) 1996-2022 by all Contributors,
+        ALL RIGHTS RESERVED
+
+
+V<9>isit www.<0>s<9>ystemc.or<0>g<9> and see <0>w<9>hat Syste<0>m<9>C can do <0>f<9>or you to<0>day!<0>
