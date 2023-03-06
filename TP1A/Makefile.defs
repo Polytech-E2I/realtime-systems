@@ -1,5 +1,6 @@
 ## Variable that points to SystemC installation path
-SYSTEMC = /softslin/systemc2_3
+#SYSTEMC = /softslin/systemc2_3
+SYSTEMC = /usr/lib
 
 
 INCDIR = -I. -I.. -I$(SYSTEMC)/include
@@ -12,7 +13,8 @@ EXE    = $(MODULE).x
 
 .SUFFIXES: .cc .cpp .o .x
 
-$(EXE): $(OBJS) $(SYSTEMC)/lib-$(TARGET_ARCH)/libsystemc.a 
+#$(EXE): $(OBJS) $(SYSTEMC)/lib-$(TARGET_ARCH)/libsystemc.a 
+$(EXE): $(OBJS) $(SYSTEMC)/libsystemc.so
 	$(CC) $(CFLAGS) $(INCDIR) $(LIBDIR) -o $@ $(OBJS) $(LIBS) 2>&1 | c++filt
 
 .cpp.o:
