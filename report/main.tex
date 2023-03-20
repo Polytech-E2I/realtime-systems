@@ -109,22 +109,38 @@ en \code{code/qA1.txt}.
 
 En lisant le code, on identifie les éléments suivants :
 
-%%%% A PRECISER AVEC LES BONS TERMES !!! %%%%
 \begin{itemize}
-    \item Classes %\texttt{write_if} et \texttt{read_if} : elles représentent les
-    %interfaces publiques, ce qui correspondrait aux entités au VHDL
-
-    \item Classe %\texttt{fifo} : représente le buffer d'échange entre le
-    %producteur et le consommateur
-
-    \item Classe %\texttt{producer} : plop
-
-    \item Classe %\texttt{consumer} : plop
-
-    \item Classe %\texttt{top} : plop
-
+    \item Classe \texttt{fifo} : représente le buffer d'échange entre le
+    producteur et le consommateur (channel). Y sont définies les interfaces qui
+    permettront d'y entrer et sortir des données.
+    \item Classes \texttt{write\_if} et \texttt{read\_if} : interfaces de
+    lecture et écriture du channel \texttt{fifo}
+    \item Classe \texttt{producer} : Thread d'écriture (process), possède un
+    port \texttt{out} capable de se connecter à une interface de type
+    \texttt{write\_if}
+    \item Classe \texttt{consumer} : Thread de lecture (process), possède un
+    port \texttt{in} capable de se connecter à une interface de type
+    \texttt{read\_if}.
+    \item Classe \texttt{top} : Le module principal
 \end{itemize}
 
+\subsection{Question A.3}
+
+Lorsqu'on ajoute un \texttt{wait()} dans le consommateur, on observe qu'il n'a
+pas le temps de vider le buffer avant le cycle suivant. Comme on peut le voir
+dans la \code{code/qA3a.txt}, il n'a le temps de vider qu'un caractère à chaque
+itération.
+
+\Codeblock{code/qA3a.txt}{bash}{Résultat avec un \texttt{wait()} dans le
+consommateur}
+
+Lorsque l'on ajoute un autre \texttt{wait()} dans le producteur, cette fois on
+observe qu'il n'a pas le temps de remplir le buffer : il n'a le temps d'y écrire
+qu'un caractère à chaque fois comme on peut le voir dans la
+\code{code/qA3b.txt}.
+
+\Codeblock{code/qA3b.txt}{bash}{Résultat en ajoutant encore un \texttt{wait()},
+dans le producteur cette fois-ci}
 
 %----------------------------------------------------------------------------------------
 

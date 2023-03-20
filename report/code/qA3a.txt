@@ -1,0 +1,10 @@
+$ ./run.x
+V<9>    ### Simulation time : 0 s
+i<9>    ### Simulation time : 2e-08 s
+s<9>    ### Simulation time : 4e-08 s
+[...]
+a       ### Simulation time : 1.22e-06 s
+y       ### Simulation time : 1.24e-06 s
+!       ### Simulation time : 1.26e-06 s
+
+<0>     ### Simulation time : 1.28e-06 s
