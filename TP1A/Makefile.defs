@@ -13,7 +13,7 @@ EXE    = $(MODULE).x
 
 .SUFFIXES: .cc .cpp .o .x
 
-#$(EXE): $(OBJS) $(SYSTEMC)/lib-$(TARGET_ARCH)/libsystemc.a 
+#$(EXE): $(OBJS) $(SYSTEMC)/lib-$(TARGET_ARCH)/libsystemc.a
 $(EXE): $(OBJS) $(SYSTEMC)/libsystemc.so
 	$(CC) $(CFLAGS) $(INCDIR) $(LIBDIR) -o $@ $(OBJS) $(LIBS) 2>&1 | c++filt
 

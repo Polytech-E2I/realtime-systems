@@ -3,7 +3,7 @@ TARGET_ARCH = linux64
 CC     = g++ 
 OPT    = -O3
 DEBUG  = -g
-OTHER  = -Wall -Wno-deprecated -static
+OTHER  = -Wall -Wno-deprecated #-static
 #CFLAGS = $(OPT) $(OTHER)
 CFLAGS = $(DEBUG) $(OTHER)
 
