@@ -3,6 +3,9 @@
 
 int sc_main (int argc, char* argv[])
 {
+    sc_core::sc_report_handler::set_actions( "/IEEE_Std_1666/deprecated",
+                                           sc_core::SC_DO_NOTHING );
+
     top top1 ("top1");							// instance of the top module
 
     sc_trace_file *tf;							// declare a trace file

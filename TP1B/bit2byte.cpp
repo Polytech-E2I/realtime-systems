@@ -61,6 +61,8 @@ void Bit2Byte::thRead ()
         {
             bByteReady = true;
             byteReady.notify ();
+
+            //printf("Reconstructed byte %c\n", data);
         }
     }
 }
@@ -76,7 +78,7 @@ void Bit2Byte::thProduce ()
         if (bByteReady == false)				// wait until there is a complete byte ready to be sent
             wait (byteReady);
 
-        printf ("[%lu] Bit2Byte::thProduce: %X\n", (unsigned long) sc_simulation_time (), (unsigned int) data & 0xFF);
+        printf ("[%lu] Bit2Byte::thProduce: %c\n", (unsigned long) sc_simulation_time (), (unsigned int) data & 0xFF);
 
         tdata = data;							// put the byte in tdata
         bByteReady = false;						// reset bByteReady

@@ -1,5 +1,6 @@
 #include "systemc.h"
 #include "bitgen.h"
+#include <bitset>
 
 /* define the BitGen module */
 
@@ -15,7 +16,7 @@ void BitGen::thProduce()
 {
     /* to be completed - exercise 3 */
 
-    std::ifstream source{ "a.txt "};
+    std::ifstream source{ "a.txt"};
 
     if(!source)
     {
@@ -23,21 +24,39 @@ void BitGen::thProduce()
         exit(EXIT_FAILURE);
     }
 
-    while(true)
+    char current_byte = '\0';
+
+    while(source)
     {
-        data_out = 1;
-        rdy = 1;
+        source.read(&current_byte, 1);
 
-        if( ack == false )
+        // std::bitset<8> x(current_byte);
+        // std::cout << "Read byte " << current_byte << " (" << x << ") from file" << std::endl;
+
+        for(int i = 0 ; i < 8 ; ++i)
         {
-            wait( ack.posedge_event() );
+            data_out = ( current_byte >> i ) & 0x1;
+
+            // std::cout << data_out;
+
+            rdy = 1;
+
+            if( ack == false )
+            {
+                wait( ack.posedge_event() );
+            }
+
+            rdy = 0;
+
+            wait(2, SC_NS);
+
+            if( ack == true )
+            {
+                wait( ack.negedge_event() );
+            }
+            wait(2, SC_NS);
         }
 
-        rdy = 0;
-
-        if( ack == true )
-        {
-            wait( ack.negedge_event() );
-        }
+        // std::cout << std::endl;
     }
 }

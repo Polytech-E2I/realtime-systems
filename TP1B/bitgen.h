@@ -5,7 +5,7 @@
 
 class BitGen : public sc_module
 {
-public: 
+public:
     SC_HAS_PROCESS(BitGen);
     BitGen(sc_module_name name);
 
