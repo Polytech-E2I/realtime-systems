@@ -5,12 +5,12 @@
 
 /* constructor */
 
-Consumer::Consumer(sc_module_name name) 
+Consumer::Consumer(sc_module_name name)
 {
-	SC_THREAD(thConsume);				// thConsume is a thread
+    SC_THREAD(thConsume);				// thConsume is a thread
 }
 
 void Consumer::thConsume()
 {
-	/* to be completed - exercise 5 - read a data by its in port and display it */
+    /* to be completed - exercise 5 - read a data by its in port and display it */
 }

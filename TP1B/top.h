@@ -11,22 +11,22 @@
 class top : public sc_module
 {
 public:
-	top(sc_module_name name);				// constructor
+    top(sc_module_name name);				// constructor
 
-private:	
-	
-	/* declare the submodules */
-	FIFO					fifo1;			
-	BitGen					bitGen1;		
-	Bit2Byte				bit2Byte1;		
-	Consumer				consumer1;		
+private:
+
+    /* declare the submodules */
+    FIFO					fifo1;
+    BitGen					bitGen1;
+    Bit2Byte				bit2Byte1;
+    Consumer				consumer1;
 
 public:
 
-	/* declare the signals linking BitGen and Bit2Byte */
-	sc_signal<bool>			rdy;			
-	sc_signal<bool>			ack;
-	sc_signal<bool>			data;
+    /* declare the signals linking BitGen and Bit2Byte */
+    sc_signal<bool>			rdy;
+    sc_signal<bool>			ack;
+    sc_signal<bool>			data;
 
 };
 

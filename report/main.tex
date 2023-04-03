@@ -147,7 +147,24 @@ dans le producteur cette fois-ci}
 \pagebreak
 \section{TP1 Partie B - Modélisation d'un système simple}
 
-\lipsum[1-3]
+\subsection{Question B.1}
+
+En lisant le code, on identifie les éléments suivants :
+
+\begin{itemize}
+    \item Classe \texttt{FIFO} : représente le buffer d'échange entre
+    \texttt{Bit2Byte} et le consommateur. Y sont définies les interfaces qui
+    permettront d'y entrer et sortir des données.
+    \item Classes \texttt{write\_if} et \texttt{read\_if} : interfaces de
+    lecture et écriture du channel \texttt{FIFO}
+    \item Classe \texttt{BitGen} : Thread de génération des bits (process)
+    \item Classe \texttt{Bit2Byte} : Thread de conversion des bits en octets
+    (process)
+    \item Classe \texttt{Consumer} : Thread de consommation des octets générés
+    (process)
+    \item Classe \texttt{top} : Le module principal
+\end{itemize}
+
 
 %----------------------------------------------------------------------------------------
 

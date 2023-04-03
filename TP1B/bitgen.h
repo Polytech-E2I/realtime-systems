@@ -6,15 +6,18 @@
 class BitGen : public sc_module
 {
 public: 
-	SC_HAS_PROCESS(BitGen);
-	BitGen(sc_module_name name);
+    SC_HAS_PROCESS(BitGen);
+    BitGen(sc_module_name name);
 
 public:
-	void thProduce();
+    void thProduce();
 
 public:
-	/* to be completed - exercise 2 - add the ports */
+    /* to be completed - exercise 2 - add the ports */
 
+    sc_out<bool>		data_out;
+    sc_out<bool>		rdy;
+    sc_in<bool>			ack;
 };
 
 #endif

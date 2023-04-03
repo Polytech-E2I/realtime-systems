@@ -10,8 +10,8 @@ int sc_main (int argc, char* argv[])
 
                                                 /* specify signals to be traced */
     sc_trace(tf, top1.data, "data");
-    sc_trace(tf, top1.rdy, "rdy");
-    sc_trace(tf, top1.ack, "ack");
+    sc_trace(tf, top1.rdy,  "rdy");
+    sc_trace(tf, top1.ack,  "ack");
 
     sc_start ();								// start simulation
 
