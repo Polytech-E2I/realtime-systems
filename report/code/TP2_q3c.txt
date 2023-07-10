@@ -1,0 +1,19 @@
+bool proc1 (Task* task, void* p)
+{
+    static int count = 0;
+
+    IntHandler* par=(IntHandler*)p;
+
+    cout << task->m_name << " "<< par->i << endl;
+
+    count += 1;
+    if(count == 5)
+    {
+        static Proc4ArgumentHandler par5(5, 55, "cinq");
+        task->m_os->m_cpu->s_cpus[1]->AddInitialTask(proc5, (void*) &par5, "cpu2 - proc5");
+    }
+
+    CONSUME(par->i * 100);
+
+    return true;
+}

@@ -250,7 +250,7 @@
 		"**/*.sta": true,
 		"**/*.lpz": true,
 		"**/*.xwm": true,
-		"**/.DS_Store": true,
-		"**/main.pdf": true
+		"**/.DS_Store": true
+		//"**/main.pdf": true
 	}
 }

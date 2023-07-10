@@ -12,6 +12,8 @@
 bool proc1 (Task*,void*);
 bool proc2 (Task*,void*);
 bool proc3 (Task*,void*);
+bool proc4 (Task*,void*);
+bool proc5 (Task*,void*);
 
 
 //Structure used for transfering an  integer parameter through void pointer (without worrying the compiler)
@@ -27,7 +29,6 @@ struct Proc4ArgumentHandler{
     {}
     int _a, _b;
     str::string _s;
-    
 };
 
 

@@ -1,0 +1,8 @@
+bool proc4 (Task* task,void* p)
+{
+    Proc4ArgumentHandler* par = (Proc4ArgumentHandler*) p;
+
+    cout << par->_a + par->_b << " " << par->_s;
+
+    return true;
+}

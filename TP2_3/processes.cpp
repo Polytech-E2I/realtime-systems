@@ -6,49 +6,61 @@
 
 bool proc1 (Task* task, void* p)
 {
+    static int count = 0;
 
-	IntHandler* par=(IntHandler*)p;
+    IntHandler* par=(IntHandler*)p;
 
-	cout << task->m_name << " "<< par->i << endl;
+    cout << task->m_name << " "<< par->i << endl;
 
-	CONSUME(par->i * 100);
+    count += 1;
+    if(count == 5)
+    {
+        static Proc4ArgumentHandler par5(5, 55, "cinq");
+        task->m_os->m_cpu->s_cpus[1]->AddInitialTask(proc5, (void*) &par5, "cpu2 - proc5");
+    }
 
-	return true;
+    CONSUME(par->i * 100);
+
+    return true;
 }
 
 bool proc2 (Task* task,void* p)
 {
-	IntHandler* par=(IntHandler*)p;
+    IntHandler* par=(IntHandler*)p;
 
-	cout << task->m_name << " "<< par->i << endl;
+    cout << task->m_name << " "<< par->i << endl;
 
-	CONSUME(par->i * 100);
-	return true;
+    CONSUME(par->i * 100);
+    return true;
 }
 
 bool proc3 (Task* task,void* p)
 {
-	IntHandler* par=(IntHandler*)p;
+    IntHandler* par=(IntHandler*)p;
 
-	cout << task->m_name << " "<< par->i << endl;
+    cout << task->m_name << " "<< par->i << endl;
 
-	CONSUME(par->i * 100);
+    CONSUME(par->i * 100);
 
-	return true;
+    return true;
 }
 
 
 bool proc4 (Task* task,void* p)
 {
-	//To be completed	
-	return true;
+    Proc4ArgumentHandler* par = (Proc4ArgumentHandler*) p;
+
+    cout << par->_a + par->_b << " " << par->_s;
+
+    return true;
 }
 
 bool proc5 (Task* task,void* p)
 {
-	//To be completed	
+    Proc4ArgumentHandler* par = (Proc4ArgumentHandler*) p;
 
-	//Do not restart the process
-	return false;
+    cout << par->_a + par->_b << " " << par->_s;
+    //Do not restart the process
+    return false;
 }
 
