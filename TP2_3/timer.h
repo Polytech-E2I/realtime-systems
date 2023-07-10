@@ -6,9 +6,12 @@
 using namespace sc_core;
 
 
-class Timer: public sc_module{
+class Timer: public sc_module
+{
 public:
-	
-	//To be completed
+	Timer(CPU* cpu): m_cpu{cpu}
+	{}
+
+	CPU* m_cpu;
 
 };

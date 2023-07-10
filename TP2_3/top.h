@@ -13,6 +13,7 @@ public:
 	void driver();
 
 	CPU cpu1,cpu2;
+	Timer timer{cpu2};
 
 
 	sc_signal<bool> clock;
