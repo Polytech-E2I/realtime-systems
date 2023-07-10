@@ -1,0 +1,14 @@
+void FIFO::read(char& c)
+{
+    if(num_elements <= 0)
+    {
+        printf("[%lu] FIFO is empty. Reader waiting...\n", (unsigned long) sc_simulation_time());
+        wait(write_event);
+        printf("[%lu] FIFO is no longer empty.\n", (unsigned long) sc_simulation_time());
+    }
+
+    c = data[first];
+    first = (first + 1) % max;
+    num_elements -= 1;
+    read_event.notify();
+}

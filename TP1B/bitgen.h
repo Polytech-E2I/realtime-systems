@@ -13,8 +13,6 @@ public:
     void thProduce();
 
 public:
-    /* to be completed - exercise 2 - add the ports */
-
     sc_out<bool>		data_out;
     sc_out<bool>		rdy;
     sc_in<bool>			ack;

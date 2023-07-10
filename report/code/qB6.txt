@@ -1,0 +1,64 @@
+[46] Bit2Byte::thProduce: T
+[46] FIFO is no longer empty.
+Caractère lu : T
+[48] FIFO is empty. Reader waiting...
+[94] Bit2Byte::thProduce: h
+[94] FIFO is no longer empty.
+Caractère lu : h
+[96] FIFO is empty. Reader waiting...
+[142] Bit2Byte::thProduce: i
+[142] FIFO is no longer empty.
+Caractère lu : i
+[144] FIFO is empty. Reader waiting...
+[190] Bit2Byte::thProduce: s
+[190] FIFO is no longer empty.
+Caractère lu : s
+[192] FIFO is empty. Reader waiting...
+[238] Bit2Byte::thProduce:  
+[238] FIFO is no longer empty.
+Caractère lu :  
+[240] FIFO is empty. Reader waiting...
+[286] Bit2Byte::thProduce: i
+[286] FIFO is no longer empty.
+Caractère lu : i
+[288] FIFO is empty. Reader waiting...
+[334] Bit2Byte::thProduce: s
+[334] FIFO is no longer empty.
+Caractère lu : s
+[336] FIFO is empty. Reader waiting...
+[382] Bit2Byte::thProduce:  
+[382] FIFO is no longer empty.
+Caractère lu :  
+[384] FIFO is empty. Reader waiting...
+[430] Bit2Byte::thProduce: a
+[430] FIFO is no longer empty.
+Caractère lu : a
+[432] FIFO is empty. Reader waiting...
+[478] Bit2Byte::thProduce:  
+[478] FIFO is no longer empty.
+Caractère lu :  
+[480] FIFO is empty. Reader waiting...
+[526] Bit2Byte::thProduce: t
+[526] FIFO is no longer empty.
+Caractère lu : t
+[528] FIFO is empty. Reader waiting...
+[574] Bit2Byte::thProduce: e
+[574] FIFO is no longer empty.
+Caractère lu : e
+[576] FIFO is empty. Reader waiting...
+[622] Bit2Byte::thProduce: s
+[622] FIFO is no longer empty.
+Caractère lu : s
+[624] FIFO is empty. Reader waiting...
+[670] Bit2Byte::thProduce: t
+[670] FIFO is no longer empty.
+Caractère lu : t
+[672] FIFO is empty. Reader waiting...
+[718] Bit2Byte::thProduce: .
+[718] FIFO is no longer empty.
+Caractère lu : .
+[720] FIFO is empty. Reader waiting...
+[766] Bit2Byte::thProduce: .
+[766] FIFO is no longer empty.
+Caractère lu : .
+[768] FIFO is empty. Reader waiting...

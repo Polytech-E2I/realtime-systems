@@ -12,11 +12,13 @@ Consumer::Consumer(sc_module_name name)
 
 void Consumer::thConsume()
 {
-    /* to be completed - exercise 5 - read a data by its in port and display it */
-
     char c = '\0';
 
-    in->read(c);
+    while(true)
+    {
+        in->read(c);
+        printf("Caractère lu : %c\n", c);
 
-    printf("Caractère lu : %c\n", c);
+        wait(2, SC_NS);
+    }
 }

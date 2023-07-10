@@ -49,7 +49,7 @@
 % #2 : Language
 % #3 : Caption
 \newcommand{\Codeblock}[3]{
-    \begin{figure}[h]
+    \begin{figure}[H]
         \centering
         \inputminted
         [
@@ -164,6 +164,46 @@ En lisant le code, on identifie les éléments suivants :
     (process)
     \item Classe \texttt{top} : Le module principal
 \end{itemize}
+
+\subsection{Question B.2}
+
+On définit les ports dans la classe \texttt{BitGen} comme visible en
+\code{code/qB2.txt}. On connecte ensuite ces ports aux canaux dans le
+constructeur de \texttt{top} comme visible en \code{code/qB2b.txt}.
+
+\Codeblock{code/qB2a.txt}{cpp}{Module \texttt{BitGen}}
+\Codeblock{code/qB2b.txt}{cpp}{Connexion des modules}
+
+\subsection{Question B.3}
+
+L'implémentation de \texttt{thProduce} se fait à l'aide d'une simple lecture de
+fichier octet par octet, puis par des décalages de bits successifs, comme on
+peut le voir en \code{code/qB3.txt}.
+
+\Codeblock{code/qB3.txt}{cpp}{Thread \texttt{thProduce}}
+
+\subsection{Question B.4}
+
+L'implémentation de la méthode \texttt{read} est relativement triviale et se
+trouve en \code{code/qB4.txt}.
+
+\Codeblock{code/qB4.txt}{cpp}{Méthode \texttt{read} de la FIFO}
+
+\subsection{Question B.5}
+
+Enfin, \texttt{thConsume} est une implémentation également relativement simple
+et est visible en \code{code/qB5.txt}
+
+\Codeblock{code/qB5.txt}{cpp}{Thread \texttt{thConsume}}
+
+\subsection{Question B.6}
+
+Le résultat final en exécutant le programme donne la sortie visible en
+\code{code/qB6.txt}, et on y retrouve bien la phrase "This is a test." du
+fichier original.
+
+\Codeblock{code/qB6.txt}{bash}{Sortie du système complet}
+
 
 
 %----------------------------------------------------------------------------------------

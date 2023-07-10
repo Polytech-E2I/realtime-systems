@@ -13,8 +13,6 @@ FIFO::FIFO(sc_module_name name) : sc_channel(name), num_elements(0), first(0)
 
 void FIFO::read(char& c)
 {
-    /* to be completed - exercise 4 */
-
     if(num_elements <= 0)
     {
         printf("[%lu] FIFO is empty. Reader waiting...\n", (unsigned long) sc_simulation_time());
@@ -22,7 +20,8 @@ void FIFO::read(char& c)
         printf("[%lu] FIFO is no longer empty.\n", (unsigned long) sc_simulation_time());
     }
 
-    c = data[(first + num_elements) % max];
+    c = data[first];
+    first = (first + 1) % max;
     num_elements -= 1;
     read_event.notify();
 }
